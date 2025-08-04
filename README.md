@@ -23,9 +23,9 @@ The schema follows a **Star Schema**, which consists of:
   - `JSON`
 ## Data Modeling & ETL
 - `/Data Modelling/` folder includes sample data in:
-  -Star Schema
-  -ETL Code
-  -Loaded Data Proof
+  - Star Schema
+  - ETL Code
+  - Loaded Data Proof
   
 ## Snowflake Scripts
 - `/snowflake/` folder contains:

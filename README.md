@@ -21,7 +21,12 @@ The schema follows a **Star Schema**, which consists of:
   - `SQL`
   - `Excel (.xlsx)`
   - `JSON`
-
+## Data Modeling & ETL
+- `/Data Modelling/` folder includes sample data in:
+  -Star Schema
+  -ETL Code
+  -Loaded Data Proof
+  
 ## Snowflake Scripts
 - `/snowflake/` folder contains:
   - DDL scripts for schema and table creation

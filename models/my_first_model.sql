@@ -1,0 +1,6 @@
+SELECT
+  *
+FROM
+  ASSETDW.PUBLIC.ASSETS
+WHERE
+  amount > 0

@@ -1,6 +1,3 @@
 SELECT
-  *
-FROM
-  ASSETDW.PUBLIC.ASSETS
-WHERE
-  amount > 0
+  CURRENT_DATE AS today,
+  'hello from dbt' AS message

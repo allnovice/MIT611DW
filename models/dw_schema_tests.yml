@@ -1,0 +1,40 @@
+version: 2
+
+sources:
+  - name: dw
+    schema: DW
+    tables:
+      - name: ACCOUNT_STATUS
+        columns:
+          - name: STATUSCODE
+            tests:
+              - not_null
+              - unique
+          - name: DESCRIPTION
+            tests:
+              - not_null
+      - name: BRANCH
+        columns:
+          - name: BRANCHID
+            tests:
+              - not_null
+              - unique
+          - name: DESCRIPTION
+            tests:
+              - not_null
+          - name: CITY
+            tests:
+              - not_null
+      - name: CUSTOMER
+        columns:
+          - name: CUSTOMERID
+            tests:
+              - not_null
+              - unique
+          - name: FNAME
+            tests:
+              - not_null
+          - name: LNAME
+            tests:
+              - not_null
+      # Add more tables/columns as needed here

@@ -2,21 +2,25 @@ version: 2
 
 sources:
   - name: dw
-    database: DEATHCARE2        # Add your database name here
-    schema: DW                  # Schema name as before
+    database: DEATHCARE2      # Your Snowflake database name
+    schema: DW                # Your schema name
     tables:
-      - name: ACCOUNT_STATUS
+      - name: DIM_ACCOUNT_STATUS
         columns:
-          - name: STATUSCODE
+          - name: STATUS_CODE
             tests:
               - not_null
               - unique
           - name: DESCRIPTION
             tests:
               - not_null
-      - name: BRANCH
+          - name: CREATED_DATE
+            tests:
+              - not_null
+
+      - name: DIM_BRANCH
         columns:
-          - name: BRANCHID
+          - name: BRANCH_ID
             tests:
               - not_null
               - unique
@@ -26,9 +30,10 @@ sources:
           - name: CITY
             tests:
               - not_null
-      - name: CUSTOMER
+
+      - name: DIM_CUSTOMER
         columns:
-          - name: CUSTOMERID
+          - name: CUSTOMER_ID
             tests:
               - not_null
               - unique
@@ -38,4 +43,21 @@ sources:
           - name: LNAME
             tests:
               - not_null
-      # Add more tables and columns as needed
+
+      - name: FACT_RESERVATIONHDR
+        columns:
+          - name: TRANSACTION_NO
+            tests:
+              - not_null
+              - unique
+          - name: BRANCH_ID
+            tests:
+              - not_null
+          - name: RESERVATION_DATE
+            tests:
+              - not_null
+          - name: CLIENT_ID
+            tests:
+              - not_null
+
+      # Add other DIM_ and FACT_ tables similarly following this format

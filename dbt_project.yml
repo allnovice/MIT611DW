@@ -37,15 +37,12 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 models:
   my_new_project:
+    marts:
+      facts:
+        +schema: DW
+        +materialized: table
     staging:
-      +schema: DBT_SCHEMA
+      +schema: DW
       +materialized: view
 
-    facts:
-      +schema: DW
-      +materialized: table
-
-    dims:
-      +schema: DW
-      +materialized: table
 

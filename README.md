@@ -1,5 +1,27 @@
 # MIT611DW - Asset Management Data Warehouse
 
+Tool Selection Justification
+
+##Snowflake
+- `Chosen as the core Cloud Data Warehouse due to its scalability, performance, and serverless architecture. It supports SQL-based querying, separation of storage and compute, and seamless data integration from multiple sources.`
+
+
+##Power BI
+- `Used for data visualization and reporting. It connects easily with Snowflake and allows drag-and-drop dashboards, helping users analyze trends and insights from the warehouse with minimal setup.`
+
+
+##CSV & Excel
+- `Used as initial data cleaning and formatting tools for raw datasets. Excel is accessible and effective for quick inspections, column renaming, and removing inconsistent records before loading into Snowflake.`
+
+
+##dbt Cloud
+- `Selected for data transformation and modeling. dbt enables version-controlled SQL transformations, modular modeling, and lineage tracking directly inside Snowflake. The cloud version simplifies scheduling and collaboration.`
+
+
+
+
+
+
 This project explores Data Warehousing concepts through an Asset Management scenario. It includes:
 
 - Star schema design
@@ -38,3 +60,5 @@ The schema follows a **Star Schema**, which consists of:
 
 ## License
 MIT License
+
+

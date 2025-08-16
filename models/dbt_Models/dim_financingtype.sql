@@ -2,4 +2,4 @@
     materialized='table'
 ) }}
 
-select * from raw_data.msit.financingtype
+select distinct * from raw_data.msit.financingtype

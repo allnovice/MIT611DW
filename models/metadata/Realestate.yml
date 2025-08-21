@@ -1,0 +1,148 @@
+tables:
+- name: dim_accountstatus
+  columns:
+  - name: statuscode
+    type: VARCHAR(50)
+    constraint: PRIMARY KEY
+  - name: description
+    type: VARCHAR(100)
+  - name: createddate
+    type: TIMESTAMP_NTZ
+- name: dim_branch
+  columns:
+  - name: branchid
+    type: INTEGER
+    constraint: PRIMARY KEY
+  - name: description
+    type: VARCHAR(100)
+  - name: cluster
+    type: VARCHAR(50)
+  - name: city
+    type: VARCHAR(100)
+  - name: province
+    type: VARCHAR(100)
+  - name: zipcode
+    type: VARCHAR(20)
+- name: dim_customer
+  columns:
+  - name: customerid
+    type: INTEGER
+    constraint: PRIMARY KEY
+  - name: fname
+    type: VARCHAR(100)
+  - name: lname
+    type: VARCHAR(100)
+  - name: birthday
+    type: DATE
+  - name: location
+    type: VARCHAR(150)
+  - name: createddate
+    type: TIMESTAMP_NTZ DEFAULT CURRENT_TIMESTAMP
+- name: dim_financingtype
+  columns:
+  - name: fintypecode
+    type: VARCHAR(50)
+    constraint: PRIMARY KEY
+  - name: description
+    type: VARCHAR(100)
+  - name: recdate
+    type: TIMESTAMP_NTZ
+- name: dim_lotinventory
+  columns:
+  - name: unitcode
+    type: VARCHAR(50)
+    constraint: PRIMARY KEY
+  - name: branchid
+    type: INTEGER
+  - name: unittype
+    type: VARCHAR(50)
+  - name: unitclass
+    type: VARCHAR(50)
+  - name: phase
+    type: VARCHAR(50)
+  - name: section
+    type: VARCHAR(50)
+  - name: block
+    type: VARCHAR(50)
+  - name: lot
+    type: VARCHAR(50)
+  - name: unitcost
+    type: NUMBER(18,2)
+  - name: recuser
+    type: VARCHAR(100)
+  - name: recdate
+    type: TIMESTAMP
+- name: dim_unitclass
+  columns:
+  - name: unitclasscode
+    type: VARCHAR(50)
+    constraint: PRIMARY KEY
+  - name: description
+    type: VARCHAR(100)
+  - name: recdate
+    type: TIMESTAMP
+- name: dim_unittype
+  columns:
+  - name: unittypecode
+    type: VARCHAR(50)
+    constraint: PRIMARY KEY
+  - name: description
+    type: VARCHAR(100)
+  - name: recdate
+    type: TIMESTAMP
+- name: dim_sellingprice
+  columns:
+  - name: sellingid
+    type: INTEGER
+    constraint: PRIMARY KEY
+  - name: branchid
+    type: INTEGER
+  - name: phase
+    type: VARCHAR(50)
+  - name: unittype
+    type: VARCHAR(50)
+  - name: unitclass
+    type: VARCHAR(50)
+  - name: lotprice
+    type: NUMBER(18,2)
+  - name: mcf
+    type: NUMBER(18,2)
+  - name: tcp
+    type: NUMBER(18,2)
+  - name: effectivedate
+    type: DATE
+  - name: recuser
+    type: VARCHAR(100)
+- name: fct_reservationhdr
+  columns:
+  - name: transactionno
+    type: VARCHAR
+    constraint: PRIMARY KEY
+  - name: branchid
+    type: INTEGER
+  - name: reservationdate
+    type: TIMESTAMP
+  - name: fintypecode
+    type: VARCHAR(50)
+  - name: clientid
+    type: INTEGER
+  - name: sourcecode
+    type: VARCHAR(50)
+  - name: statuscode
+    type: VARCHAR(50)
+  - name: unitcode
+    type: VARCHAR(50)
+  - name: lotprice
+    type: NUMBER(18,2)
+  - name: vat
+    type: NUMBER(18,2)
+  - name: grosslotprice
+    type: NUMBER(18,2)
+  - name: salesdisc
+    type: NUMBER(18,2)
+  - name: netlotprice
+    type: NUMBER(18,2)
+  - name: misc
+    type: NUMBER(18,2)
+  - name: tcp
+    type: NUMBER(18,2)

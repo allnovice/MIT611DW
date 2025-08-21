@@ -1,0 +1,29 @@
+version: 2
+
+sources:
+  - name: "real_estate"
+    description: "Test Data for real Estate"
+    database: "RAW_DATA"
+    schema: "DBT_AALFONSO"
+    tables:
+      - name: "Sample_data"
+
+models:
+  - name: dim_accountstatus
+    description: "test Account Status"
+    columns:
+      - name: Createddate
+        description: "Created Date of the Account Status"
+        tests:
+          - not_null
+      - name: Statuscode
+        description: "Status of the Account"
+        tests:
+          - not_null
+  - name: dim_branch
+    description: "Branch Details"
+    columns:
+      - name: BranchID
+        description: "Branch ID of the Reservation"
+        tests:
+          - not_null
